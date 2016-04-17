@@ -1,6 +1,27 @@
 <?php
 
 return array(
+    
+    
+        /*
+         * 
+         * External package for multiple user authentication
+         * Added by Lourence Rex B. Traya
+         */
+    
+         'multi' => array(
+             'admin' => array(
+                 'driver' => 'database',
+                 'model' => 'Admin',
+                 'table' => 'admins'
+             ),
+             
+             'users' => array(
+                 'driver' => 'database',
+                 'model' => 'Users',
+                 'table' => 'users'
+             )
+         ),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,7 +36,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'database',
+	//'driver' => 'database',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +49,7 @@ return array(
 	|
 	*/
 
-	'model' => 'User',
+	//'model' => 'User',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +62,7 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	//'table' => 'users',
 
 	/*
 	|--------------------------------------------------------------------------

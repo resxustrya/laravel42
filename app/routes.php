@@ -45,7 +45,9 @@ Route::post('login', function() {
 	))) {
 
                 return Redirect::intended('profile');
-	}
+	} else {
+            return Illuminate\Support\Facades\Redirect::to('login');
+        }
 });
 
 Route::get('logout', function(){
@@ -151,9 +153,20 @@ Route::get('vieworders',function() {
 Route::get('pdf',function() {
 	$pdf = App::make('dompdf');
 
-	$user = User::find(4);
-	$pdf->loadHTML("<h1 style='color:red;'>Test".$user->username."</h1>");
+        $html = "<h1>Hello World</h1>"
+                ."<img height='100' width='100' src='../public/uploads/Date-a-programmer.png'>";
+                
+	$pdf->loadHTML($html);
 	return $pdf->stream();
 });
 
-Route::get('controller','MyController@index');
+Route::get('upload',function() {
+
+	return View::make('upload');
+});
+
+Route::post('upload',function() {
+
+	//Input::file('photo')->move('')
+        
+});

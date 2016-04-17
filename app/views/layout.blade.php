@@ -2,9 +2,11 @@
 <html>
 <head>
     <title></title>
+    <!--
     <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" type="text/css"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap-theme.min.css') }}" type="text/css"/>
-</head>
+    -->
+    </head>
 <body>
     <h1>Welcome to my page</h1>
 
