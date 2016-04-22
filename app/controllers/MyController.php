@@ -8,7 +8,10 @@
  */
 class MyController extends BaseController
 {
-    public function index() {
-        return "Hello MyController";
-    }
+    public function logout() {
+        
+        Auth::logout();
+        Session::forget('islogin');
+        return Redirect::to('/');
+    } 
 }

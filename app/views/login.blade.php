@@ -1,24 +1,32 @@
 
 
 @extends('layout')
-
+    
 @section('content')
-    @if(Auth::check())
-        <h4>You are curently logged in</h4>
-    @endif
-    <form action="/login" method="POST">
-        <table border="0">
-            <tr>
-                <td><label for="username">Username</label></td>
-                <td><input type="text" name="username" /></td>
-            </tr>
-            <tr>
-                <td><label for="password">Password</label></td>
-                <td><input type="password" name="password"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Submit" /></td>
-            </tr>
-        </table>
+ <div class="row">
+    <h1> {{ Session::get('message') }}</h1>
+    <form  method="POST" action="/login" class="col s12">
+        {{ Form::token() }}
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="username" name="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input name="password" id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s4">
+           <button class="btn waves-effect waves-light" type="submit" name="action">Login
+               <i class="material-icons right">send</i>
+           </button>
+        </div>
+      </div>
     </form>
+  </div>
 @stop
+    

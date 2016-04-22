@@ -1,7 +1,6 @@
 
-
 @extends('layout')
 
 @section('content')
-    <h2>Welcome to my page</h2>
+    <h1>Url not found babay</h1>
 @stop

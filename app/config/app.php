@@ -96,8 +96,8 @@ return array(
 	'providers' => array(
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-		/*'Illuminate\Auth\AuthServiceProvider',*/
-                "Ollieread\Multiauth\MultiauthServiceProvider",
+		'Illuminate\Auth\AuthServiceProvider',
+                /*'Ollieread\Multiauth\MultiauthServiceProvider',*/
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Session\CommandsServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',

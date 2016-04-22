@@ -1,13 +1,12 @@
-
-
-@extends('home')
+@extends('layout')
 
 @section('content')
     <div class="container">
         @foreach($users as $user)
-            {{ $user->name }}
+            {{ $user->email }}
             <br />
         @endforeach
     </div>
+    
     {{ $users->links() }}
 @stop
