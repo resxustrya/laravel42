@@ -55,7 +55,9 @@ Route::post('register',function(){
 });
 
 Route::get('login', function() {
-   return View::make('login');
+   return View::make('login')
+       ->with('title','User Login')
+       ->with('message','Welcome to MaidFinder PH');
 });
 
 Route::post('search', function(){
@@ -66,6 +68,11 @@ Route::post('search', function(){
        return "New result found";
    }
 });
+
+Route::get('angular', function() {
+    return View::make('angular');
+});
+
 
 Route::post('login', function() {
    
@@ -88,6 +95,7 @@ Route::group(array('before' => 'admin'), function() {
        return "Page2";
     });
 });
+
 
 Route::get('profile', array('before' => 'authcheck',function() {
     return View::make('profile');

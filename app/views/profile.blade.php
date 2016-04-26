@@ -16,6 +16,9 @@
                }
             });
         }
-        setTimeout(checkAuth,1000);
+        setTimeout(checkAuth,50);
+    </script>
+    <script>
+
     </script>
 @stop
