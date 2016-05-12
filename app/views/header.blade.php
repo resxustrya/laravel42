@@ -15,7 +15,7 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">=</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/register" class="dropdown-button" data-activates="dropdown1">Sign Up</a></li>
-                        <li><a class="waves-effect orange waves-light btn-small modal-trigger" href="#modal1">Login</a></li>
+                        <li><a class="waves-effect orange waves-light btn-small modal-trigger" href="/login">Login</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/">Home</a></li>
@@ -43,7 +43,7 @@
 </div>
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">Employee</a></li>
-    <li><a href="#!">Applicant</a></li>
+    <li><a href="/register-employee">Applicant</a></li>
 </ul>
 
 <!-- Login modal Structure -->

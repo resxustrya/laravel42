@@ -3,8 +3,8 @@
 @extends('layout')
 
 @section('content')
-    <h2>HI, {{ Auth::user()->email }} </h2>
-    <a href='/logout'>Logout</a>
+    <h2>HI, {{ $employee->firstname." ,". $employee->lastname }} </h2>
+    <a href='{{ URL::action('HomeController@userlogout') }}'>Logout</a>
     <script>
         function checkAuth() {
             $.ajax({
@@ -19,6 +19,6 @@
         setTimeout(checkAuth,50);
     </script>
     <script>
-
+        
     </script>
 @stop

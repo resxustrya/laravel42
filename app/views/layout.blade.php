@@ -15,6 +15,7 @@
         <link href="{{ asset('materialize/css/icons.css') }}" type="text/css" rel="stylesheet">
         <script src="{{ asset('js/jquery.js')}}"></script>
         <script src="{{ asset('js/angular.min.js')}}"></script>
+        
         <style>
             body {
                 display: flex;
@@ -27,12 +28,12 @@
             }
         </style>
     </head>
-    <body>
-    <div class="container-fluid">
+    <body class="container-fluid">
+
+     
         @include('header')
         @yield('content')
         @include('footer')
-    </div>
 
 
         <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>

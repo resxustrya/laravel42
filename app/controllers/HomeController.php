@@ -19,5 +19,13 @@ class HomeController extends BaseController {
 	{
 		return View::make('hello');
 	}
+        public function register() {
+            return View::make('register');
+        }
+        public function userlogout() {
+             Auth::logout();
+             Session::put('islogin',false);
+             return Redirect::to('/');
+        }
 
 }
