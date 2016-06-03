@@ -21,6 +21,7 @@
                 </tr>
             </table>
         </fieldset>
+      
         <fieldset>
             <legend>User account</legend>
             <table border="0">
@@ -32,6 +33,9 @@
                     <td><label for="password">Password</label></td>
                     <td><input type="password" name="password" /></td>
                 </tr>
+                <tr>
+                    <td><label for="role">Role</label></td>
+                    <td><input type="text" name="role" /></td>
                 <tr>
                     <td>&nbsp;</td>
                     <td><input type="submit" name="submit" value="Register" />

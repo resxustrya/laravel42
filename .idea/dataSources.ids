@@ -9,120 +9,825 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="laraveltest"/>
       <table id="2" parent="1" name="migrations"/>
-      <table id="3" parent="1" name="orders"/>
-      <table id="4" parent="1" name="profile"/>
-      <table id="5" parent="1" name="users"/>
-      <column id="6" parent="2" name="migration">
+      <table id="3" parent="1" name="users"/>
+      <table id="4" parent="1" name="admin"/>
+      <table id="5" parent="1" name="applicant"/>
+      <table id="6" parent="1" name="apply"/>
+      <table id="7" parent="1" name="employee"/>
+      <table id="8" parent="1" name="employer"/>
+      <table id="9" parent="1" name="evaluation"/>
+      <table id="10" parent="1" name="evaluationquestion"/>
+      <table id="11" parent="1" name="hire"/>
+      <table id="12" parent="1" name="jobs"/>
+      <table id="13" parent="1" name="login_user"/>
+      <table id="14" parent="1" name="postjobs"/>
+      <table id="15" parent="1" name="recommendation"/>
+      <table id="16" parent="1" name="image_upload"/>
+      <column id="17" parent="2" name="migration">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="7" parent="2" name="batch">
+      <column id="18" parent="2" name="batch">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="8" parent="3" name="orderid">
+      <column id="19" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="9" parent="3" name="productname">
+      <column id="20" parent="3" name="username">
         <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
-      <column id="10" parent="3" name="qty">
+      <column id="21" parent="3" name="password">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
-      <column id="11" parent="3" name="price">
+      <column id="22" parent="3" name="email">
         <mandatory>1</mandatory>
-        <data-type>double(15,2)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
-      <column id="12" parent="3" name="profileid">
+      <column id="23" parent="3" name="applicantId">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="13" parent="3" name="created_at">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
-      </column>
-      <column id="14" parent="3" name="updated_at">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
-      </column>
-      <key id="15" parent="3" name="PRIMARY">
-        <columns>orderid</columns>
-        <primary>1</primary>
-      </key>
-      <column id="16" parent="4" name="profileid">
+      <column id="24" parent="3" name="employerId">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="17" parent="4" name="username">
-        <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
-      </column>
-      <column id="18" parent="4" name="password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
-      </column>
-      <column id="19" parent="4" name="name">
-        <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
-      </column>
-      <column id="20" parent="4" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
-      </column>
-      <column id="21" parent="4" name="created_at">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
-      </column>
-      <column id="22" parent="4" name="updated_at">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
-      </column>
-      <key id="23" parent="4" name="PRIMARY">
-        <columns>profileid</columns>
-        <primary>1</primary>
-      </key>
-      <column id="24" parent="5" name="id">
+      <column id="25" parent="3" name="adminId">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="25" parent="5" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="26" parent="5" name="username">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="27" parent="5" name="password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="28" parent="5" name="role">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="29" parent="5" name="remember_token">
+      <column id="26" parent="3" name="remember_token">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="30" parent="5" name="created_at">
+      <column id="27" parent="3" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="31" parent="5" name="updated_at">
+      <column id="28" parent="3" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <key id="32" parent="5" name="PRIMARY">
+      <column id="29" parent="3" name="deleted_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="30" parent="3" name="users_adminid_foreign">
+        <columns>adminId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="31" parent="3" name="users_applicantid_foreign">
+        <columns>applicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="32" parent="3" name="users_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="33" parent="3" name="PRIMARY">
         <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="34" parent="3" name="users_adminid_foreign">
+        <columns>adminId</columns>
+        <ref-key>~.admin.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="35" parent="3" name="users_applicantid_foreign">
+        <columns>applicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="36" parent="3" name="users_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="37" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="38" parent="4" name="fullname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="39" parent="4" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="40" parent="4" name="contactNo">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="41" parent="4" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="42" parent="4" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="43" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="44" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="45" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="46" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="47" parent="5" name="fname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="5" name="mname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="5" name="lname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="50" parent="5" name="province">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="51" parent="5" name="municipality">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="52" parent="5" name="street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="5" name="dateOfBirth">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="54" parent="5" name="gender">
+        <mandatory>1</mandatory>
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="55" parent="5" name="nationality">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="56" parent="5" name="religion">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="57" parent="5" name="civilStatus">
+        <mandatory>1</mandatory>
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="58" parent="5" name="nbi">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="59" parent="5" name="healthClearance">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="60" parent="5" name="certificate">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="61" parent="5" name="profilePic">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="62" parent="5" name="contactNo">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="63" parent="5" name="preparedSchedule">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="64" parent="5" name="employementType">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="65" parent="5" name="verifiedIs">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="66" parent="5" name="verifiedBy">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="67" parent="5" name="accountStatus">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="68" parent="5" name="employementStatus">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="69" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="70" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="71" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="72" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="73" parent="6" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="74" parent="6" name="employerId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="75" parent="6" name="dateApplied">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="76" parent="6" name="isConfirmed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="77" parent="6" name="lname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="78" parent="6" name="dateStarted">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="79" parent="6" name="dateEnded">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="80" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="81" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="82" parent="6" name="apply_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="83" parent="6" name="apply_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="84" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="85" parent="6" name="apply_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="86" parent="6" name="apply_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="87" parent="7" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="88" parent="7" name="firstname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="89" parent="7" name="lastname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="90" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="91" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="92" parent="7" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="94" parent="8" name="fname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="95" parent="8" name="mname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="96" parent="8" name="lname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="8" name="province">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="98" parent="8" name="municipality">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="99" parent="8" name="street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="100" parent="8" name="dateOfBirth">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="101" parent="8" name="gender">
+        <mandatory>1</mandatory>
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="102" parent="8" name="nationality">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="103" parent="8" name="religion">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="104" parent="8" name="civilStatus">
+        <mandatory>1</mandatory>
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="105" parent="8" name="nbi">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="106" parent="8" name="profilePic">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="107" parent="8" name="contactNo">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="108" parent="8" name="verifiedIs">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="109" parent="8" name="verifiedBy">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="110" parent="8" name="accountStatus">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="111" parent="8" name="isHiring">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="112" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="113" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="114" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="115" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="116" parent="9" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="117" parent="9" name="employerId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="118" parent="9" name="comment">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="119" parent="9" name="dateEvaluated">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="120" parent="9" name="totalRating">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <column id="121" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="122" parent="9" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="123" parent="9" name="evaluation_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="124" parent="9" name="evaluation_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="125" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="126" parent="9" name="evaluation_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="127" parent="9" name="evaluation_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="128" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="129" parent="10" name="evaluationId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="130" parent="10" name="question">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="131" parent="10" name="rating">
+        <mandatory>1</mandatory>
+        <data-type>double</data-type>
+      </column>
+      <column id="132" parent="10" name="userQuestion">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="133" parent="10" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="134" parent="10" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="135" parent="10" name="evaluationquestion_evaluationid_foreign">
+        <columns>evaluationId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="136" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="137" parent="10" name="evaluationquestion_evaluationid_foreign">
+        <columns>evaluationId</columns>
+        <ref-key>~.evaluation.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="138" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="139" parent="11" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="140" parent="11" name="employerId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="141" parent="11" name="dateRequested">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="142" parent="11" name="isAppConfirmed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="143" parent="11" name="dateStarted">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="144" parent="11" name="dateEnded">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="145" parent="11" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="146" parent="11" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="147" parent="11" name="hire_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="148" parent="11" name="hire_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="149" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="150" parent="11" name="hire_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="151" parent="11" name="hire_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="152" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="153" parent="12" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="154" parent="12" name="employerId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="155" parent="12" name="type">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="156" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="157" parent="12" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="158" parent="12" name="jobs_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="159" parent="12" name="jobs_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="160" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="161" parent="12" name="jobs_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="162" parent="12" name="jobs_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="163" parent="13" name="login_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="164" parent="13" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="165" parent="13" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="166" parent="13" name="remember_token">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="167" parent="13" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="168" parent="13" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="169" parent="13" name="PRIMARY">
+        <columns>login_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="170" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="171" parent="14" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="172" parent="14" name="employerId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="173" parent="14" name="jobType">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="174" parent="14" name="jobDescription">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="175" parent="14" name="languageSpoken">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="176" parent="14" name="datePosted">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="177" parent="14" name="isAvailable">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="178" parent="14" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="179" parent="14" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="180" parent="14" name="postjobs_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="181" parent="14" name="postjobs_employerid_foreign">
+        <columns>employerId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="182" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="183" parent="14" name="postjobs_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="184" parent="14" name="postjobs_employerid_foreign">
+        <columns>employerId</columns>
+        <ref-key>~.employer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="185" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="186" parent="15" name="aplicantId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="187" parent="15" name="recommendedBy">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="188" parent="15" name="recommendedTo">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="189" parent="15" name="dateRecommended">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="190" parent="15" name="isEmpConfirmed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="191" parent="15" name="isAppConfirmed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="192" parent="15" name="dateStarted">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="193" parent="15" name="dateEnded">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="194" parent="15" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="195" parent="15" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="196" parent="15" name="recommendation_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="197" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="198" parent="15" name="recommendation_aplicantid_foreign">
+        <columns>aplicantId</columns>
+        <ref-key>~.applicant.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="199" parent="16" name="imgid">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="200" parent="16" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="201" parent="16" name="image">
+        <mandatory>1</mandatory>
+        <data-type>blob</data-type>
+      </column>
+      <column id="202" parent="16" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="203" parent="16" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="204" parent="16" name="PRIMARY">
+        <columns>imgid</columns>
         <primary>1</primary>
       </key>
     </database-model>

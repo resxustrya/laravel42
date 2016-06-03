@@ -35,7 +35,7 @@ class ReportsController  extends BaseController {
                 </html>
 REPORT;
                 
-	$pdf->loadHTML($html);
-	return $pdf->stream();
+        $pdf->loadHTML($html);
+        return $pdf->stream();
     }
 }

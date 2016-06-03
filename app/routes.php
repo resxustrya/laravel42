@@ -13,63 +13,20 @@
 
 Route::get('/', function()
 {
-  return View::make('home');
+  return View::make('home.home');
 });
 
-Route::get('create/user', function(){
-   
-    Schema::create('employee', function($table){
-       $table->increments('empid');
-       $table->string("firstname");
-       $table->string("lastname");
-       $table->timestamps();
-    });
-    
-    Schema::create('users', function($table){
-        
-        $table->increments('id');
-        $table->string("username");
-        $table->string("password");
-        $table->string("email");
-        $table->integer("empid")->unsigned();
-        $table->timestamps();
-        $table->rememberToken();
-        $table->foreign("empid")->references("empid")->on("employee");
-    });
-    return "New users table created";
-});
-Route::get('add-table', function(){
-    Schema::table('employee',function($table){
-       $table->binary('photo'); 
-    });
-    return "photo table is added";
-});
-
-Route::get('drop', function() {
-    Schema::drop('users');
-    return "users table drop";
-});
-
+Route::get('create-table', 'TableController@createTable');
+Route::get('drop-table','TableController@dropTable');
 Route::get('register-employee','HomeController@register');
 
 
-Route::post('register',function(){
-    
-    $employee = new Employee;
-    $employee->firstname = Input::get('firstname');
-    $employee->lastname = Input::get('lastname');
-    if(Input::hasFile('image')) {
-        $employee->photo = Input::file('image');
-    }
-    $employee->save();
-    $empid = $employee->user_id;
-    
-    $user = new User;
-    $user->username = Input::get('username');
-    $user->password = Hash::make(Input::get('password'));
-    $user->empid = $empid;
-    $user->save();
-    return "New User was created";
+
+/****** LOGIN USERS *******/
+
+Route::get('create-user','LoginController@create_user');
+Route::get('card', function() {
+    return View::make('home.card');
 });
 
 Route::get('login', function() {
@@ -99,15 +56,31 @@ Route::post('login', function() {
       
     $user = array('username' => Input::get('username'), 'password' => Input::get('password'));
     if(Auth::attempt($user)) {
-        Session::put('islogin', true);
-        
-        return Redirect::to('profile');
+        if(Auth::check()) {
+          if(Auth::user()->role == 'admin') {
+            Session::put('adminlogin', true);
+            return Redirect::to('admin/admin-home');
+          } else {
+              
+          }
+        }
     } else {
         return Redirect::to('login')->with('message', 'Login Failed');
     }
 });
 
-Route::group(array('before' => 'admin'), function() {
+Route::group(array('prefix' => 'admin','before' => 'admin'),function() {
+  
+  Route::get('admin-home', function() {
+      if(Auth::check() && Auth::user()->role == 'admin') {
+        $user = User::find(Auth::id());
+        return View::make('admin.adminhome')->with('admin',$user); 
+      }
+  });
+});
+
+
+Route::group(array('prefix' => 'admin','before' => 'admin'), function() {
    
     Route::get('page1', function() {
        return "page1"; 
@@ -152,3 +125,7 @@ Route::get('show-reports','ReportsController@users');
 Route::get('bootstrap', function() {
     return View::make('bootstrap');
 });
+
+Route::get('upload', 'UploadController@upload');
+Route::post('upload','UploadController@handle');
+Route::get('create-img','UploadController@image');

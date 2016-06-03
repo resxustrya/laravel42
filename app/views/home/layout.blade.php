@@ -31,9 +31,9 @@
     <body class="container-fluid">
 
      
-        @include('header')
+        @include('home.header')
         @yield('content')
-        @include('footer')
+        @include('home.footer')
 
 
         <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
