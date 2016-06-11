@@ -13,20 +13,14 @@
 
 Route::get('/', function()
 {
-  return View::make('home.home');
+  return View::make('landing.home');
 });
-
-Route::get('create-table', 'TableController@createTable');
-Route::get('drop-table','TableController@dropTable');
-Route::get('register-employee','HomeController@register');
-
-
 
 /****** LOGIN USERS *******/
 
 Route::get('create-user','LoginController@create_user');
 Route::get('card', function() {
-    return View::make('home.card');
+    return View::make('homeold.card');
 });
 
 Route::get('login', function() {
@@ -59,7 +53,7 @@ Route::post('login', function() {
         if(Auth::check()) {
           if(Auth::user()->role == 'admin') {
             Session::put('adminlogin', true);
-            return Redirect::to('admin/admin-home');
+            return Redirect::to('admin/admin-homeold');
           } else {
               
           }
@@ -71,7 +65,7 @@ Route::post('login', function() {
 
 Route::group(array('prefix' => 'admin','before' => 'admin'),function() {
   
-  Route::get('admin-home', function() {
+  Route::get('admin-homeold', function() {
       if(Auth::check() && Auth::user()->role == 'admin') {
         $user = User::find(Auth::id());
         return View::make('admin.adminhome')->with('admin',$user); 
@@ -129,3 +123,6 @@ Route::get('bootstrap', function() {
 Route::get('upload', 'UploadController@upload');
 Route::post('upload','UploadController@handle');
 Route::get('create-img','UploadController@image');
+
+
+Route::get('drop-table', 'TableController@dropTable');

@@ -14,7 +14,7 @@ class UploadController extends BaseController
     }
 
     public function upload() {
-        return View::make('home.upload');
+        return View::make('homeold.upload');
     }
 
     public function handle() {

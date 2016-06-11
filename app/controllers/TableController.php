@@ -189,6 +189,7 @@ class TableController extends BaseController
 
     public function dropTable()
     {
+        Schema::drop('users');
         Schema::drop('jobs');
         Schema::drop('apply');
         Schema::drop('recommendation');
@@ -199,7 +200,7 @@ class TableController extends BaseController
         Schema::drop('evaluation');
         Schema::drop('applicant');
         Schema::drop('employer');
-        Schema::drop('users');
+
 
         return "All table has been drop!";
     }
