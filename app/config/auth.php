@@ -3,28 +3,21 @@
 return array(
     
     
-        /*
-         * 
-         * External package for multiple user authentication
-         * Added by Lourence Rex B. Traya
-         */
-         /*
-         'multi' => array(
-             'admin' => array(
-                 'driver' => 'database',
-                 'model' => 'Admin',
-                 'table' => 'admins'
-             ),
-             
-             'users' => array(
-                 'driver' => 'database',
-                 'model' => 'User',
-                 'table' => 'users'
-             )
-         ),
-        */
+        
+        'multi' => array(
+            'employer' => array(
+                'driver' => 'database',
+                'model' => 'Employer',
+                'table' => 'employer'
+            ),
+            'applicant' => array(
+                'driver' => 'eloquent',
+                'Model' => 'User',
+                'table' => 'applicant'
+            )
+        ),
+        
           
-
 	/*
 	|--------------------------------------------------------------------------
 	| Default Authentication Driver
@@ -38,7 +31,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'database',
+	//'driver' => 'database',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -51,7 +44,7 @@ return array(
 	|
 	*/
 
-	'model' => 'User',
+	//'model' => 'User',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -64,7 +57,7 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	//'table' => 'users',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +73,7 @@ return array(
 	| they have less time to be guessed. You may change this as needed.
 	|
 	*/
-
+        
 	'reminder' => array(
 
 		'email' => 'emails.auth.reminder',
@@ -89,6 +82,5 @@ return array(
 
 		'expire' => 60,
 
-	),
-
+	)
 );

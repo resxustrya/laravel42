@@ -8,6 +8,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
+        use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 	/**
 	 * The database table used by the model.
@@ -15,9 +16,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
+        protected $primaryKey = 'id';
 
 
-	/**
+        /**
 	 * The attributes excluded from the model's JSON form.
 	 *
          * 
@@ -25,9 +27,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
         
-        public function employee() {
-            
-            return $this->hasOne('Employee');
+        public function employer() {
+            return $this->hasOne('Employer');
+        }
+        
+        public function applicant() {
+            return $this->hasOne('Applicants');
+        }
+        public function admin() {
+            return $this->hasOne('Admin');
         }
 
 

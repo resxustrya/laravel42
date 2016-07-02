@@ -13,116 +13,47 @@
 
 Route::get('/', function()
 {
-  return View::make('landing.home');
-});
-
-/****** LOGIN USERS *******/
-
-Route::get('create-user','LoginController@create_user');
-Route::get('card', function() {
-    return View::make('homeold.card');
-});
-
-Route::get('login', function() {
-   return View::make('login')
-       ->with('title','User Login')
-       ->with('message','Welcome to MaidFinder PH');
-});
-
-Route::post('search', function(){
-   $user = User::find(Input::get('search')) ;
-   if($user != null) {
-       return $user;
-   } else {
-       return "New result found";
-   }
-});
-
-Route::get('angular', function() {
-    return View::make('angular');
-});
-
-Route::get('/alluser', function() {
-   return User::where('role', '=','guest')->get();
-});
-
-Route::post('login', function() {
-      
-    $user = array('username' => Input::get('username'), 'password' => Input::get('password'));
-    if(Auth::attempt($user)) {
-        if(Auth::check()) {
-          if(Auth::user()->role == 'admin') {
-            Session::put('adminlogin', true);
-            return Redirect::to('admin/admin-homeold');
-          } else {
-              
-          }
-        }
-    } else {
-        return Redirect::to('login')->with('message', 'Login Failed');
+    if(Session::has('applicant')) {
+        return Redirect::to('jobseeker-profile');
     }
-});
-
-Route::group(array('prefix' => 'admin','before' => 'admin'),function() {
-  
-  Route::get('admin-homeold', function() {
-      if(Auth::check() && Auth::user()->role == 'admin') {
-        $user = User::find(Auth::id());
-        return View::make('admin.adminhome')->with('admin',$user); 
-      }
-  });
-});
-
-
-Route::group(array('prefix' => 'admin','before' => 'admin'), function() {
-   
-    Route::get('page1', function() {
-       return "page1"; 
-    });
-    
-    Route::get('page2', function() {
-       return "Page2";
-    });
-});
-
-Route::get('list', function(){
-
-    $users = DB::table('users')->select('username');
-    $result = $users->addSelect('role')->get();
-    return $result;
-});
-
-Route::get('profile', array('before' => 'authcheck',function() {
-    $id = Auth::id();
-    $employee = User::find($id)->employee;
-    if($employee != NULL) {
-        return View::make('profile')->with('employee',$employee);
+    if(Session::has('employer')) {
+        return Redirect::to('employer-profile');
     }
-}));
+    return View::make('semantic.landing');
+});
 
-Route::get('userlogout',array('uses' => 'HomeController@userlogout'));
+Route::get('jobseeker-profile','ApplicantController@profile');
+Route::get('jobseeker-logout', 'ApplicantController@logout');
 
-Route::get('authcheck', function() {
-   if(Session::get('islogin') == true) {
-       return 0;
+Route::post('login-handle', 'AccountController@handleLogin');
+Route::get('user-login', function() {
+    return View::make('semantic.login');
+});
+
+Route::get('hello-admin', function() {
+	return View::make('hello-admin');
+});
+
+
+/*
+ * 
+ * ADMIN ROUTES
+ */
+
+Route::get('site-admin', function(){
+   return View::make('admin.site-admin'); 
+});
+
+Route::post('site-admin', function() {
+   $admin = Admin::where('email', '=', Input::get('email'))
+           ->where('password', '=' ,Input::get('password'))
+           ->first();
+   if($admin) {
+       Session::put('admin', true);
+       Session::put('admindata', $admin);
+       return Redirect::to('site-admin/profile');
    }
-   return 1;
+   return Redirect::to('site-admin');
 });
-
-Route::get('users',function() {
-    $users = DB::table('users')->paginate(3);
-
-    return View::make('users')->with('users',$users);
-});
-Route::get('show-reports','ReportsController@users');
-
-Route::get('bootstrap', function() {
-    return View::make('bootstrap');
-});
-
-Route::get('upload', 'UploadController@upload');
-Route::post('upload','UploadController@handle');
-Route::get('create-img','UploadController@image');
-
-
-Route::get('drop-table', 'TableController@dropTable');
+Route::get('site-admin/profile','AdminController@dashboard');
+Route::get('site-admin/logout', 'AdminController@logout');

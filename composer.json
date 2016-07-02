@@ -8,16 +8,22 @@
 		"zizaco/confide": "~4.0@dev",
 		"doctrine/dbal": "v2.4.2",
 		"barryvdh/laravel-dompdf": "0.4.*",
-        "ollieread/multiauth": "dev-master"        
+                "ollieread/multiauth": "dev-master" 
 	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
 			"app/models",
+                        "app/lib",
+                        "app/lib/interface",
+                        "app/lib/AdminAuth",
+                        "app/lib/ApplicantAuth",
+                        "app/lib/EmployerAuth",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
+                        
 		]
 	},
 	"scripts": {

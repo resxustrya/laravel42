@@ -10,7 +10,7 @@
 | your classes in the "global" namespace without Composer updating.
 |
 */
-
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
@@ -82,5 +82,9 @@ require app_path().'/filters.php';
 
 
 App::missing(function($exception){
-    return Response::view('notfound', array(), 404);
+    return Response::view('notfounde', array(), 404);
+});
+
+App::error(function(ModelNotFoundException $e){
+    return Redirect::to('hello');
 });
