@@ -17,6 +17,6 @@ class Employers extends Eloquent{
     
     use SoftDeletingTrait;
     protected $table = 'employer';
-    protected $primaryKey = 'EmpId';
+    protected $primaryKey = 'empid';
     protected $dates = ['deleted_at'];
 }

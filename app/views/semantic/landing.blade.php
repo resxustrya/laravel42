@@ -31,14 +31,16 @@
                 <div class="item">
                     <div class="ui buttons">
                       <a href="user-login">
-                         <button class="ui button purple">
+                         <span class="ui button purple">
                             <i class="sign in icon"></i>Login
-                         </button>
+                         </span>
                        </a>
                     <div class="or"></div>
-                        <button class="ui button green">
-                            <i class="user icon"></i>Sign Up
-                        </button>  
+                        <a href="user-register">
+                            <span class="ui button green">
+                                <i class="user icon"></i>Sign Up
+                            </span>
+                        </a>    
                     </div>
                 </div>                         
         </div>
@@ -76,14 +78,16 @@
                             <div class="item">
                                 <div class="ui buttons">
                                   <a href="user-login">
-                                        <button class="ui button purple">
+                                        <span class="ui button purple">
                                             <i class="sign in icon"></i>Login
-                                        </button>
+                                        </span>
                                    </a>
-                                        <div class="or"></div>
-                                        <button class="ui button green">
-                                            <i class="user icon"></i>Sign Up
-                                        </button>  
+                                   <div class="or"></div>
+                                   <a href="user-register">
+                                        <span class="ui button green">
+                                             <i class="user icon"></i>Sign Up
+                                        </span> 
+                                   </a>
                                 </div>
                              </div>                         
                         </div>

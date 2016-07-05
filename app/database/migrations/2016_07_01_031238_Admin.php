@@ -13,13 +13,14 @@ class Admin extends Migration {
 	public function up()
 	{
              Schema::create('admin', function($table){
-               $table->increments('adminid');
-               $table->string('email',200);
-               $table->string('password',200);
-               $table->string('role',200);
-               $table->timestamps();
-               $table->softDeletes();
-            });
+                 $table->increments('adminid');
+                 $table->string('fullname', 200)->nullable();
+                 $table->string('email', 200);
+                 $table->string('password',200);
+                 $table->string('contactno',200)->nullable();
+                 $table->timestamps();
+                 $table->softDeletes();
+             });
 	}
 
 	/**

@@ -16,6 +16,6 @@ class Applicants extends Eloquent {
     //put your code here
     use SoftDeletingTrait;
     protected $table = 'applicant';
-    protected $primaryKey = 'AppId';
+    protected $primaryKey = 'appid';
     protected $date = ['deleted_at'];
 }

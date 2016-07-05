@@ -16,5 +16,5 @@ class Admins  extends Eloquent {
     //put your code here
     use SoftDeletingTrait;
     protected $table = 'admin';
-    protected $primaryKey = 'AdminId';
+    protected $primaryKey = 'adminid';
 }

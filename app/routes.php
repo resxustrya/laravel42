@@ -22,23 +22,30 @@ Route::get('/', function()
     return View::make('semantic.landing');
 });
 
+
+/*
+ * 
+ * REGISTRATION ROUTES
+ * 
+ */
+
 Route::get('jobseeker-profile','ApplicantController@profile');
 Route::get('jobseeker-logout', 'ApplicantController@logout');
 
-Route::post('login-handle', 'AccountController@handleLogin');
+
 Route::get('user-login', function() {
     return View::make('semantic.login');
 });
-
-Route::get('hello-admin', function() {
-	return View::make('hello-admin');
+Route::get('user-register', function () {
+   return View::make('semantic.register'); 
 });
-
-
+Route::post('user-register', 'AccountController@handleRegister');
+Route::post('login-handle', 'AccountController@handleLogin');
 /*
  * 
  * ADMIN ROUTES
  */
+
 
 Route::get('site-admin', function(){
    return View::make('admin.site-admin'); 

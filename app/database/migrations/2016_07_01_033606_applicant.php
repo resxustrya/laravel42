@@ -13,15 +13,32 @@ class Applicant extends Migration {
 	public function up()
 	{
             Schema::create('applicant', function($table){
-               $table->increments('appid');
-               $table->string('email',200);
-               $table->string('password',200);
-               $table->string('name', 200);
-               $table->softDeletes();
-               $table->timestamps();
+              $table->increments('appid');
+              $table->string('email',200);
+              $table->string('password',200);
+              $table->string('fname',200);
+              $table->string('lname',200);
+              $table->string('province',200)->nullable();
+              $table->string('address',200)->nullable();
+              $table->string('birth',20)->nullable();
+              $table->string('gender',2)->nullable();
+              $table->string('nationality',20)->nullable();
+              $table->string('religion',20)->nullable();
+              $table->string('civilstatus')->nullable();
+              $table->binary('nbi')->nullable();
+              $table->binary('profilepic')->nullable();
+              $table->string('contactno',200)->nullable();
+              $table->boolean('isVerified')->nullable();
+              $table->boolean('ishiring')->nullable();
+              $table->string('preferedSched',200)->nullable();
+              $table->string('empType',200)->nullable();
+              $table->string('expectedSalary',50)->nullable();
+              $table->boolean('accountStatus')->nullable();
+              $table->boolean('empStatus')->nullable();
+              $table->timestamps();
+              $table->softDeletes();
             });
-	}
-
+        }    
 	/**
 	 * Reverse the migrations.
 	 *
