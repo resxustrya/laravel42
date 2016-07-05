@@ -5,15 +5,15 @@
   <div class="ui container">
         <div class="right item">
             <a class="item" href="/">Home</a>
-            <a class="item" href="#"> Cities</a>
-            <a class="item" href="#"> Find a Maid</a>
-            <a class="item" href="#"> Get a Job</a>
+            <a class="item" href="cities"> Cities</a>
+            <a class="item" href="maid"> Find a Maid</a>
+            <a class="item" href="jobs"> Get a Job</a>
                 <div class="item">
                     <div class="ui buttons">
                       <a href="user-login">
-                         <button class="ui button purple">
+                         <span class="ui button purple">
                             <i class="sign in icon"></i>Login
-                         </button>
+                         </span>
                        </a>
                     <div class="or"></div>
                         <a href="user-register">
@@ -22,7 +22,7 @@
                             </span>
                         </a>
                     </div>
-                </div>                         
+                </div>                   
         </div>
   </div>
 </div>
