@@ -29,18 +29,28 @@ Route::get('/', function()
  * 
  */
 
+Route::get('user-register', function () {
+   return View::make('account.register'); 
+});
+Route::post('user-register', 'AccountController@next');
+
+/*
+ * 
+ * ACCOUNT MANAGEMENT ROUTES
+ * 
+ * 
+ */
+
+
+
 Route::get('jobseeker-profile','ApplicantController@profile');
 Route::get('jobseeker-logout', 'ApplicantController@logout');
 
 
 Route::get('user-login', function() {
-    return View::make('semantic.login');
+    return View::make('account.login');
 });
-Route::get('user-register', function () {
-   return View::make('semantic.register'); 
-});
-Route::post('user-register', 'AccountController@handleRegister');
-Route::post('login-handle', 'AccountController@handleLogin');
+
 /*
  * 
  * ADMIN ROUTES

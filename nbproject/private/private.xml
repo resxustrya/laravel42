@@ -5,12 +5,16 @@
         <group>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/js/semantic.min.js</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/lib/AdminAuth/AdminAuth.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/register.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/models/Employers.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/login.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/next.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/header.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/database/seeds/DatabaseSeeder.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/npm-debug.log</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/HomeController.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/js/myscript.js</file>
-            <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/layout.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/footer.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/css/semantic.min.css</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/landing.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/BaseController.php</file>
@@ -19,20 +23,19 @@
             <file>file:/C:/xampp/htdocs/laravel42/app/database/migrations/2016_07_01_031238_Admin.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/database/migrations/2016_07_01_032759_employer.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/css/semantic.css</file>
-            <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/register.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/login.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/ReportsController.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/css/register.css</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/start/global.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/filters.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/css/forms.css</file>
-            <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/footer.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/js/wodry.min.js</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/UploadController.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/views/admin/admin.dashboard.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravel42/app/views/semantic/header.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/semantic/assets/js/myjs.js</file>
             <file>file:/C:/xampp/htdocs/laravel42/public/packages/.gitkeep</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/AccountController.php</file>
+            <file>file:/C:/xampp/htdocs/laravel42/app/views/account/layout.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/routes.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/controllers/EmployerController.php</file>
             <file>file:/C:/xampp/htdocs/laravel42/app/models/Admins.php</file>

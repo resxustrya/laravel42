@@ -1,7 +1,25 @@
 
 
 
-@extends('semantic.layout')
+@extends('account.layout')
+@section('css')
+@parent
+<style>
+    
+     body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+</style>
+@stop
 @section('content')
 
 <div class="ui middle aligned center aligned grid">

@@ -2,6 +2,9 @@
 <html>
 <head>
   <!-- Standard Meta -->
+  @section('title')
+  <title>Login - MaidFinder</title>
+  @show
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -13,29 +16,15 @@
     <link rel="icon" href="{{ asset('semantic/assets/img/icon.png') }}">
     <script type="text/javascript" src="{{ asset('semantic/assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('semantic/assets/js/wodry.min.js') }}"></script>
-    <script type="text/javascript " src="{{ asset('semantic/assets/js/myscript.js') }}"></script>
+    
   @show
   <!-- Site Properties -->
-  <title>Login Example - Semantic</title>
-  <style>
-     body {
-      background-color: #DADADA;
-    }
-    body > .grid {
-      height: 100%;
-    }
-    .image {
-      margin-top: -100px;
-    }
-    .column {
-      max-width: 450px;
-    }
-  </style>
+  
 </head>
 <body>
-    @include('semantic.header')
+    @include('account.header')
     @yield('content')
-    @include('semantic.footer')
+    @include('account.footer')
 <script src="{{ asset('semantic/assets/js/semantic.min.js') }}"></script>
 <script src="{{ asset('semantic/assets/js/myjs.js') }}"></script> 
 </body>

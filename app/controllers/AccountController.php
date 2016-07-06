@@ -33,12 +33,15 @@ class AccountController extends BAseController {
             break;
         }
     }
-    public function applicant_save() {
-        $app = Applicants::where('email', '=', Input::get('email'));
-        $emp = Employers::where('email', '=', Input::get('email'));
-        
-        if($app || $emp) {
-            return Redirect::to('user-login')->with('msg','Email is already used');
-        }
+    public function next() {
+       $temp = array(
+           'email' => Input::get('email'),
+           'fname' => Input::get('fname'),
+           'lname' => Input::get('lname'),
+           'pass' => Input::get('password')
+       );
+       Session::put('tempdata', $temp);
+       
+       return View::make('account.next');
     }
 }
