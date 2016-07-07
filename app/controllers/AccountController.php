@@ -69,7 +69,7 @@ class AccountController extends BaseController {
             'email.email' => 'Invalid email',
             'fname.required' => 'First Name is required',
             'lname.required' => 'Last Name is required',
-            'pass.require' => 'Password is required'
+            'pass.required' => 'Password is required'
         );
         $validator = Validator::make($temp,$rules,$messages);
         
