@@ -24,6 +24,7 @@ class AccountController extends BaseController {
             Session::put('employer', $emp);
             return Redirect::to('/');
         }
+        
         $app = Applicants::where('email', '=', Input::get('email'))
                 ->where('password', '=', Input::get('password'))
                 ->first();
@@ -33,9 +34,7 @@ class AccountController extends BaseController {
         }
         return Redirect::to('user-login')->with('msg','Invalid email or password');
     }
-    
- 
-    
+      
     /*
     * Check if email is already exists into employers and applicants table
     * if exits, redirect back to registration page and try another email
@@ -52,7 +51,6 @@ class AccountController extends BaseController {
                     ->with('message','Email is already used');
                    
         }
-        
         $temp = array(
             'email' => Input::get('email'),
             'fname' => Input::get('fname'),
@@ -64,17 +62,22 @@ class AccountController extends BaseController {
             'email' => 'required|email',
             'fname' => 'required',
             'lname' => 'required',
-            'password' => 'required|min:10'
+            'pass' => 'required|min:10'
         );
-        
-        $validator = Validator::make($temp,$rules);
+        $messages = array(
+            'email.required' => 'Email is required',
+            'email.email' => 'Invalid email',
+            'fname.required' => 'First Name is required',
+            'lname.required' => 'Last Name is required',
+            'pass.require' => 'Password is required'
+        );
+        $validator = Validator::make($temp,$rules,$messages);
         
         if($validator->fails()) {
             $messages = $validator->messages();
             return Redirect::to('user-register')
                     ->with('error',$messages);
         }
-        
         Session::put('temp', $temp);
         
         return View::make('account.next');
