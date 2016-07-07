@@ -22,9 +22,10 @@ class DatabaseSeeder extends Seeder {
 class ApplicantTableSeeder extends Seeder {
     public function run() {
         $app = new Applicants();
-        $app->email = 'rexustraya@gamil.com';
+        $app->email = 'rexustraya@gmail.com';
         $app->password = 'traya';
-        $app->name = 'Lourence Rex B. Traya';
+        $app->fname = 'Lourence';
+        $app->lname = 'Traya';
        
         
         $app->save();
@@ -32,7 +33,8 @@ class ApplicantTableSeeder extends Seeder {
         $app = new Applicants();
         $app->email = 'lourence@gmail.com';
         $app->password = 'rexustraya';
-        $app->name = 'Rexus Traya';
+        $app->fname = 'Rex';
+        $app->lname = 'Bohol';
         
         
         $app->save();
@@ -43,7 +45,8 @@ class EmployerTableSeeder extends Seeder {
         $emp = new Employers();
         $emp->email = 'rex@outlook.com';
         $emp->password = 'lourence';
-        $emp->name = 'Rex Traya';
+        $emp->fname = 'Rexus';
+        $emp->lname = 'Muana';
      
         
         $emp->save();
@@ -51,7 +54,8 @@ class EmployerTableSeeder extends Seeder {
         $emp = new Employers();
         $emp->email = 'rexustraya@outlook.com';
         $emp->password = 'traya';
-        $emp->name = 'Rex Lourence B. Traya';
+        $emp->fname = 'Rusel';
+        $emp->lname = 'Tayong';
         
         
         $emp->save();
@@ -64,6 +68,8 @@ class AdminTableSeeder extends Seeder {
         $admin = new Admins();
         $admin->email = 'admin@gmail.com';
         $admin->password = 'admin';
+        $admin->fullname = 'Administraion';
+        $admin->contactno = '09226663075';
         $admin->save();
     }
 }

@@ -15,6 +15,16 @@
                 Register with Email
                 </span>
         </h2>
+        @if(Session::has('message'))
+            <div class="ui error message">
+                <div class="header">
+                  Error !
+                </div>
+                <ul class="list">
+                   <li>{{ Session::get('message') }}</li>
+                </ul>
+            </div>
+        @endif
         <form class="ui form" action="user-register" method="POST">
               <div class="ui stacked segment">
                 <div class="field">
@@ -54,7 +64,7 @@
             </form>
 
             <div class="ui message">
-              Already have an account?<a href="#">Sign In</a>
+              Already have an account?<a href="user-login">Sign In</a>
             </div>
     </div>
       <div class="ui vertical divider">
@@ -69,14 +79,6 @@
 </div>
   <div class="column"></div>
   </div>
- <!---------------------THIS IS FOOTER-------------------------------->
- <div class="ui bottom fixed footer" style="bottom:0;position:fixed;width:100%">
-  <div class="ui  padded footer  grid" >
-  <div class="grey row">
-      <div class="column"><i class="icon copyright"></i>2016 MaidFinderPH</div>
-  </div>
-  </div>
-</div>
 @stop
 
 

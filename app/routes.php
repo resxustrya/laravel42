@@ -14,10 +14,10 @@
 Route::get('/', function()
 {
     if(Session::has('applicant')) {
-        return Redirect::to('jobseeker-profile');
+        return View::make('applicant.profile');
     }
     if(Session::has('employer')) {
-        return Redirect::to('employer-profile');
+        return View::make('employer.profile');
     }
     return View::make('semantic.landing');
 });
@@ -36,20 +36,31 @@ Route::post('user-register', 'AccountController@next');
 
 /*
  * 
- * ACCOUNT MANAGEMENT ROUTES
+ * ACCOUNT MANAGEMENT ROUTESsw
  * 
  * 
  */
 
-
-
-Route::get('jobseeker-profile','ApplicantController@profile');
-Route::get('jobseeker-logout', 'ApplicantController@logout');
-
-
 Route::get('user-login', function() {
     return View::make('account.login');
 });
+Route::post('user-login', 'AccountController@handleLogin');
+
+/*
+ * 
+ * APPLICANT ROOUTES
+ * 
+ */
+Route::get('jobseeker-profile','ApplicantController@profile');
+Route::get('jobseeker-logout', 'ApplicantController@logout');
+
+/*
+ * 
+ * EMPLOYER ROUTES
+ * 
+ */
+
+Route::get('employer-logout','EmployerController@logout');
 
 /*
  * 
@@ -65,7 +76,7 @@ Route::post('site-admin', function() {
    $admin = Admin::where('email', '=', Input::get('email'))
            ->where('password', '=' ,Input::get('password'))
            ->first();
-   if($admin) {
+   if($admin and ($admin->email == Input::get('email') and $admin->password == Input::get('password'))) {
        Session::put('admin', true);
        Session::put('admindata', $admin);
        return Redirect::to('site-admin/profile');

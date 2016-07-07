@@ -5,7 +5,6 @@
 @section('css')
 @parent
 <style>
-    
      body {
       background-color: #DADADA;
     }
@@ -21,7 +20,6 @@
 </style>
 @stop
 @section('content')
-
 <div class="ui middle aligned center aligned grid">
   <div class="column">
     <h2 class="ui teal image header">
@@ -30,7 +28,14 @@
         Log-in to your account
       </div>
     </h2>
-    <form class="ui large form">
+      @if(Session::has('msg'))
+        <div class="ui warning message">
+            <div class="header">
+              {{ Session::get('msg') }}
+            </div>
+        </div>
+      @endif
+      <form class="ui large form" action="user-login" method="POST">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -44,7 +49,7 @@
             <input type="password" name="password" placeholder="Password">
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Login</div>
+          <input type="submit" class="ui fluid large teal submit button" value='Login' />
         <div class="ui horizontal divider">
                 Or
             </div>
@@ -59,9 +64,8 @@
     </form>
 
     <div class="ui message">
-      New to us? <a href="#">Sign Up</a>
+      New to us? <a href="user-register">Sign Up</a>
     </div>
   </div>
 </div>
-
 @stop

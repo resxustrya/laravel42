@@ -25,12 +25,8 @@ class ApplicantController extends BaseController {
         return View::make('applicant.profile');
     }
     public function logout() {
-        if(AppAuth::logout()) {
-            return Redirect::to('/');
-        }
-        
-    } 
-    public function setKey($key) {
-    	return View::make('hello')->with('key', $key);
+       Session::forget('applicant');
+       Session::flush();
+       return Redirect::to('/');
     }
 }

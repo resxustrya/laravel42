@@ -16,7 +16,6 @@
     <link rel="icon" href="{{ asset('semantic/assets/img/icon.png') }}">
     <script type="text/javascript" src="{{ asset('semantic/assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('semantic/assets/js/wodry.min.js') }}"></script>
-    
   @show
   <!-- Site Properties -->
   
