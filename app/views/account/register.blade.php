@@ -1,5 +1,8 @@
+
+
+
 @section('title')
-<title>Register - MaidFinder</title>
+    <title>Register - MaidFinder</title>
 @stop
 @extends('account.layout')
 @section('content')
@@ -37,25 +40,30 @@
                 </ul>
             </div>
         @endif
-        
+        <?php
+            $data = null;
+            if(Session::has('input')) {
+                $data = Session::get('input');
+            }
+        ?>
         <form class="ui form" action="user-register" method="POST">
               <div class="ui stacked segment">
                 <div class="field">
                   <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="email" placeholder="E-mail address">
+                    <input type="text" name="email" placeholder="E-mail address" value="{{ isset($data['email']) ? $data['email'] : '' }}">
                   </div>
                 </div>
                   <div class='field'>
                       <div class='ui left icon input'>
                           <i class='user icon'></i>
-                          <input type="text" name='fname' placeholder="First Name" />
+                          <input type="text" name='fname' placeholder="First Name" value="{{ isset($data['fname']) ? $data['fname'] : '' }}"/>
                       </div>
                   </div>
                     <div class='field'>
                       <div class='ui left icon input'>
                           <i class='user icon'></i>
-                          <input type="text" name='lname' placeholder="Last Name" />
+                          <input type="text" name='lname' placeholder="Last Name" value="{{ isset($data['lname']) ? $data['lname'] : '' }}"/>
                       </div>
                   </div>
                 <div class="field">

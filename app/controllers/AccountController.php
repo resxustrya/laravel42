@@ -51,6 +51,13 @@ class AccountController extends BaseController {
                     ->with('message','Email is already used');
                    
         }
+        
+        /*
+         * 
+         * User registration validation rules
+         * 
+         * 
+         */
         $temp = array(
             'email' => Input::get('email'),
             'fname' => Input::get('fname'),
@@ -74,9 +81,11 @@ class AccountController extends BaseController {
         $validator = Validator::make($temp,$rules,$messages);
         
         if($validator->fails()) {
+            
             $messages = $validator->messages();
             return Redirect::to('user-register')
-                    ->with('error',$messages);
+                    ->with('error',$messages)
+                    ->with('input', $temp);
         }
         Session::put('temp', $temp);
         
