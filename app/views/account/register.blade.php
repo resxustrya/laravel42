@@ -25,6 +25,19 @@
                 </ul>
             </div>
         @endif
+        @if(Session::has('error'))
+            <div class="ui error message">
+                <div class="header">
+                  Error !
+                </div>
+                <ul class="list">
+                    @foreach(Session::get('error')->all() as $msg)
+                        <li>{{ $msg }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
         <form class="ui form" action="user-register" method="POST">
               <div class="ui stacked segment">
                 <div class="field">
