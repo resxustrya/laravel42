@@ -10,18 +10,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('semantic/assets/css/semantic.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('semantic/assets/css/mycss.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('semantic/assets/css/wodry.css') }}">
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-
     <link rel="icon" href="{{ asset('semantic/assets/img/icon.png') }}">
     <script type="text/javascript" src="{{ asset('semantic/assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('semantic/assets/js/wodry.min.js') }}"></script>
 </head>
 <body>
-    <!-- Following Menu -->
-<div class="ui  fixed hidden menu borderless" style="margin-top:0px;background-color:#ecf0f1;">
+    <!------------------------------------Following Menu---------->
+<div class="landfix ui  fixed hidden menu inverted borderless" style="margin-top:0px;background-color:#58C9B9;">
    <div class="left item">
-            <a  class="logo " href="/" style="font-family:Dancing Script, cursive;weight:100;font-size:2.5em;"> <span  >MaidFinderPH </span></a>
-        </div>
+            <img src="{{ asset('semantic/assets/img/icon.png') }}" alt="MaidFinder" class="image">
+            <a  class="logo " href="#" style="font-family:DancingScript;weight:100;font-size:2.5em;"> <span  >MaidFinderPH </span></a>
+   </div>
   <div class="ui container">
         <div class="right item">
             <a class="active item" href="/">Home</a>
@@ -30,33 +29,42 @@
             <a class="item" href="#"> Get a Job</a>
                 <div class="item">
                     <div class="ui buttons">
-                      <a href="user-login">
-                         <span class="ui button purple">
+                      <a href="client/client-login.html">
+                         <button class="ui button purple">
                             <i class="sign in icon"></i>Login
-                         </span>
+                         </button>
                        </a>
                     <div class="or"></div>
-                        <a href="user-register">
-                            <span class="ui button green">
-                                <i class="user icon"></i>Sign Up
-                            </span>
-                        </a>    
+                        <button class="ui button green">
+                            <i class="user icon"></i>Sign Up
+                        </button>  
                     </div>
                 </div>                         
         </div>
   </div>
 </div>
-    <!--sidebar-->
-    <div class="ui sidebar menu  container icon labeled vertical ">
-        
+ <!--------------------------sidebar------------------------>
+    <div class="ui sidebar menu  container icon labeled vertical ">    
         <a class="item" href="#"><i class="global icon"></i> Cities</a>
         <a class="item" href="#"> Find a Maid</a>
         <a class="item" href="#"> Get a Job</a>
-        <a class="item" href="user-login">Login</a>
-        <a class="item" href="user-signup">Sign Up</a>
+         <div class="item">
+            <div class="ui buttons">
+              <a href="user-login">
+                    <button class="ui button purple">
+                        <i class="sign in icon"></i>Login
+                    </button>
+              </a>
+              <div class="or"></div>
+              <a href="user-register">
+                <button class="ui button green">
+                      <i class="user icon"></i>Sign Up
+                </button>  
+              </a>
+            </div>
+        </div>            
     </div>
-
-    <!--Main content-->
+    <!---------------------------Main content------------------------>
     <div class="pusher">
         <div class="ui vertical aligned center masthead segment landing inverted">
             <div class="transbg">
@@ -68,7 +76,7 @@
                             </a>
                         </div>
                         <div class="left item">
-                            <a class="logo " href="#" ><span style="font-family:Dancing Script, cursive;weight:100;font-size:2.5em" class="wodry">MaidFinderPH </span></a>
+                            <a class="logo " href="#" ><span style="font-family:DancingScript, cursive;weight:100;font-size:2.5em" class="wodry">MaidFinderPH </span></a>
                         </div>
                         <div class="right item">
                             <a class="active item" href="/">Home</a> 
@@ -78,16 +86,16 @@
                             <div class="item">
                                 <div class="ui buttons">
                                   <a href="user-login">
-                                        <span class="ui button purple">
+                                        <button class="ui button purple">
                                             <i class="sign in icon"></i>Login
-                                        </span>
+                                        </button>
                                    </a>
-                                   <div class="or"></div>
-                                   <a href="user-register">
-                                        <span class="ui button green">
-                                             <i class="user icon"></i>Sign Up
-                                        </span> 
-                                   </a>
+                                        <div class="or"></div>
+                                    <a href="user-register">
+                                        <button class="ui button green">
+                                            <i class="user icon"></i>Sign Up
+                                        </button> 
+                                    </a> 
                                 </div>
                              </div>                         
                         </div>
@@ -135,11 +143,13 @@
                 </div>
             </div>
         </div>
-           <div class="overlay dnl">
-          <div class="ui inverted labeled icon vertical menu"  style="background-color:#D1B6E1">
-            <a class="item "><i class=" download icon inverted" ></i> Download App</a>
-          </div>
+    <!-----------First Page------------------->
+    <!------------------Fixed sownload btn-------------------------->
+        <div class="overlay dnl">
+        <div class="ui inverted labeled icon vertical menu"  style="background-color:#D1B6E1">
+          <a class="item "><i class=" download icon inverted" ></i> Download App</a>
         </div>
+      </div>
   <div class="ui vertical stripe segment " id="hdiw"> 
       <div class="row">
          <h3 class="ui header center aligned  ">How does it work?</h3>
@@ -164,9 +174,9 @@
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <h3 class="ui header">"Find the right for you"</h3>
+          <h3 class="ui header">Join to find the right for you</h3>
           <p> MaidFinderPH is a platform for home care service finder for employer and job seeker.</p>
-          <h3 class="ui header"> Quamquam haec quidem praeposita </h3>
+          <h3 class="ui header">Let us work while you unwind </h3>
           <p> Quamquam haec quidem praeposita recte et reiecta dicere licebit. Egone non intellego, quid sit don Graece, Latine voluptas? </p>
         </div>
         <div class="six wide right floated column">
@@ -181,13 +191,13 @@
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
-          <h3>"Lorem ipsum dolor sit amet"</h3>
+          <h3>"You deserve a Break"</h3>
           <p> Quamquam haec quidem praeposita</p>
         </div>
         <div class="column">
-          <h3>"Quamquam haec quidem praeposita recte."</h3>
+          <h3>"Keep your free time free."</h3>
           <p>
-            <img src="{{ asset('semantic/ssets/img/bg1.jpg') }}" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+            <img src="{{ asset('semantic/assets/img/bg1.jpg') }}" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
           </p>
         </div>
       </div>
@@ -196,24 +206,24 @@
 
   <div class="ui vertical stripe segment">
     <div class="ui text container">
-      <h3 class="ui header">Lorem ipsum dolor sit amet</h3>
+      <h3 class="ui header">No need to get far </h3>
       <p>Quamquam haec quidem praeposita recte et reiecta dicere licebit. Egone non intellego, quid sit don Graece, Latine voluptas?.</p>
       <a class="ui large button">Read More</a>
       <h4 class="ui horizontal header divider">
         <a href="#">Case Studies</a>
       </h4>
-      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+      <h3 class="ui header">It only take a click to find your matches</h3>
       <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
       <a class="ui large button">I'm Still Quite Interested</a>
     </div>
   </div>
-<!--Team-->
+<!-------------------------Team-------------------->
 
  <div id="contact" class="ui vertical stripe segment "> 
     <div class="ui text container">
    <h3 class="ui header center aligned  ">Meet Our Team</h3>
  <div class="ui three column grid">
-        <!---------First Member----------->
+        <!-------------First Member-------------->
    <div class="column">
  
        <div class="ui special  ">
@@ -253,7 +263,7 @@
       </div>
 
         </div>
-          <!---------Second Member----------->
+          <!-------------Second Member-------------->
         <div class="column">
  
        <div class="card ">
@@ -292,7 +302,7 @@
       </div>
 
         </div>
-           <!---------Third Member----------->
+           <!------------Third Member-------------->
         <div class="column">
         
        <div class="card ">
@@ -331,7 +341,7 @@
       </div>
 
         </div>
-           <!---------Fourth Member----------->
+           <!-------------------Fourth Member-------------->
         <div class="column">
         
        <div class="card ">
@@ -371,7 +381,7 @@
 
         </div>
         
-           <!---------Fifth Member----------->
+           <!--------------Fifth Member-------------->
         <div class="column">
           <div class="card ">
                 <div class="blurring dimmable ui small circular image">
@@ -402,14 +412,14 @@
                 <div class="content">
                     <a class="header">Jolly Ann Dolloso</a>
                       <div class="meta">
-                      <span class="date">QA Tester</span>
+                      <span class="date">UI/UX/QA Tester</span>
                 </div>
               </div>
             </div>
           </div>
 
         </div>
-        <!---------Sixth Member----------->
+        <!-------------Sixth Member-------------->
         <div class="column">
            <div class="card ">
                 <div class="blurring dimmable ui small circular image">
@@ -434,7 +444,7 @@
                       </div>
                   </div>
             </div>
-                <img src="{{asset('semantic/assets/img/stevie.jpg') }}" class="ui small circular image" >
+                <img src="{{ asset('semantic/assets/img/stevie.jpg') }}" class="ui small circular image" >
             </div>
             <div class="center">
                 <div class="content">
@@ -445,10 +455,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
    </div>
  </div>
 <!---------------------THIS IS FOOTER-------------------------------->
@@ -489,7 +497,7 @@
       </div>
     </div>
   </div>
-   </div>
+</div>
     <script src="{{ asset('semantic/assets/js/semantic.min.js') }}"></script>
     <script src="{{ asset('semantic/assets/js/myjs.js') }}"></script> 
 </body>

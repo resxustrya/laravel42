@@ -6,12 +6,9 @@
 @stop
 @extends('account.layout')
 @section('content')
-    <div class="ui  column centered grid">
-  <div class="column">
- 
-  </div>
-  <div class="four column centered row ui  middle aligned aligned center aligned grid very relaxed stackable grid">
-    <div class="column">
+  <div class="ui  column centered grid">
+     <div class="four column centered row ui  middle aligned aligned center aligned grid very relaxed stackable grid">
+         <div class="five wide column">
         <h2 class="ui teal image header">
                 <img src="{{ asset('semantic/assets/img/icon.png') }}" class="image">
                 <span class="content">
@@ -91,15 +88,17 @@
       <div class="ui vertical divider">
             Or
      </div>
-    <div class="center column">
+    <div class="five wide column">
         <button class="ui  facebook button">
                     <i class="facebook icon"></i>
                         Connect with Facebook to Login
          </button>
     </div>
 </div>
-  <div class="column"></div>
-  </div>
+<div class="column" style="margin-bottom:50px;"></div>
+</div>
+
+
 @stop
 
 

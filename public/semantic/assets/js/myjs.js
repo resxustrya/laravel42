@@ -23,7 +23,7 @@
     ;
 $('.wodry').wodry({
     animation: 'rotateAll',
-    delay: 5000
+    delay: 1000
 });
 //---------------------------------------scroll hide download-----------------------
 $(document).scroll(function() {
